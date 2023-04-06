@@ -14,7 +14,7 @@ classifier = pickle.load(pickle_in)
 # Allow requests from any origin
 
 
-origins = ["http://localhost", "http://localhost:8080", "https://myapp.herokuapp.com", "http://localhost:5000","http://localhost:5000/CornaryArteryDisease"]
+origins = ["http://localhost", "http://localhost:8080", "https://myapp.herokuapp.com", "http://localhost:5000","http://localhost:5000/CoronaryArteryDisease"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -64,9 +64,9 @@ def predict_disease(data: patientData):
 
     # If prediction = 0 then patient do not have heart disease and if prediction = 1, patient has heart disease
     if prediction[0] == 1:
-        prediction = "Cornary Artery Disease"
+        prediction = "Coronary Artery Disease"
     else:
-        prediction = "No Cornary Artery Disease"
+        prediction = "No Coronary Artery Disease"
     return {
         'prediction': prediction
     }
